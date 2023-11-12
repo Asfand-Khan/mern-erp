@@ -6,15 +6,15 @@ mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
 const fs = require('fs');
 async function setupApp() {
   try {
-    const Admin = require('../models/coreModels/Admin');
+    const Admin = require('../models/coreModels/Admin'); 
     var newAdmin = new Admin();
     const passwordHash = newAdmin.generateHash('admin123');
 
     await new Admin({
-      email: 'admin@demo.com',
+      email: 'asfand@admin.com',
       password: passwordHash,
-      name: 'Salah Eddine',
-      surname: 'Lalami',
+      name: 'Asfand',
+      surname: 'Ali',
       role: 'admin',
     }).save();
 
@@ -33,7 +33,6 @@ async function setupApp() {
     const customConfig = JSON.parse(
       fs.readFileSync(__dirname + '/config/customConfig.json', 'utf-8')
     );
-
     const moneyFormatConfig = JSON.parse(
       fs.readFileSync(__dirname + '/config/moneyFormatConfig.json', 'utf-8')
     );
